@@ -68,24 +68,45 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 
-\*\***Describe your setting, players, activity and goals here.**\*\*
+\*\*
+**Describe your setting, players, activity and goals here.**
+
+**_Setting:_** A device is placed next to an oven in the kitchen.  This device's screen can also be displayed simultaneously on another device, nearby the device located next to the oven, meaning one could see what is displayed from the main device, if they were in a room outside of their kitchen. 
+
+**_Players:_** The primary person involved is the person who turns on the oven and is waiting for it to heat up.  They usually will be holding a separate device or watching the device next to the oven.  In addition to this, their family could be involved and if they lived in an apartment, their neighbors might hear the "ding" or "alarm" sound given off by either devices. 
+
+**_Activity:_** A person turns on the oven and the device turns blue.  The person is then able to use a handheld device to see the device's color in realtime.  As the oven heats up, the devices turn red.  Once the oven has reached the person's desired heat, the devices are completely red and sound off a "Ding".  If the person does not use the oven within 5 minutes, the devices turn orange.  Once the devices are orange, if 5 more minutes go by and the oven has not been used, the devices sound an "alarm".
+
+**_Goals_:** The goal of the primary player is to quickly cook food for oneself and/or one's family using the oven.  These devices will fulfill this goal by telling the person as soon as the oven is heated.  Another goal is that the player does not want to cause a fire or hazard within his kitchen.  The devices will fulfill this goal by sounding an alarm when the oven has been heated for too long without interaction.
+\*\*
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 
-\*\***Include a picture of your storyboard here**\*\*
+\*\***Include a picture of your storyboard here**
+
+![storyboard](Lab1-storyboard.jpg)
+\*\*
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 
-\*\***Summarize feedback you got here.**\*\*
+\*\***Summarize feedback you got here.**
+
+When I pitched this idea, many said it was a decent idea, however, most ovens these days tell you when the oven is properly heated.  Because of this, I decided to add the second device that would enable you to exit the kitchen, while the oven was on, and get the alert that it was heated outside of the kitchen.  Also, it is good to note that this idea caters more toward older ovens that do not tell you when the device is properly heated. 
+
+\*\*
 
 
 ## Part B. Act out the Interaction
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
-\*\***Are there things that seemed better on paper than acted out?**\*\*
+\*\***Are there things that seemed better on paper than acted out?**
 
-\*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
+When I acted this device out, things went smooth and quite consistent to how I expected them to be.\*\*
+
+\*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**
+
+I did notice that instead of having two devices, I might be able to just use one device that is mobile, which can wirelessly read a temperature sensor within the oven.  I feel that this would be more practical and realistic because you can use the device wherever you want, which includes the kitchen.\*\*
 
 
 ## Part C. Prototype the device
@@ -98,17 +119,35 @@ We invented this tool for this lab!
 
 If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
 
-\*\***Give us feedback on Tinkerbelle.**\*\*
+\*\***Give us feedback on Tinkerbelle.**
+
+Tinkerbell works well and is creative, espcially with the sounds.  It would be nice if the iPhone could be used in fullscreen mode. \*\*
 
 
 ## Part D. Wizard the device
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
-\*\***Include your first attempts at recording the set-up video here.**\*\*
+\*\***Include your first attempts at recording the set-up video here.**
+
+[Setting up Tinkerbelle](https://youtu.be/hZ_whkIUkRI)
+
+\*\*
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
-\*\***Show the follow-up work here.**\*\*
+\*\***Show the follow-up work here.**
+
+Scene 1 - [Turning on the oven](https://youtu.be/0jKUdBpO7bE)
+
+Scene 2 - [Device turning red in the kitchen](https://youtu.be/LS9ATyc3p1s) | [Device turning red in the living room](https://youtu.be/Mk7APGHyL7A)
+
+Scene 3 - [Oven ready, device is red and plays a ding](https://youtu.be/CM_9ZRjprDQ) | [The player has fallen asleep!](https://youtu.be/R8uvVL6ftuI)
+
+Scene 4 - [Oven has been running for a while](https://youtu.be/MOepwv-II4c)
+
+Scene 5 - [Device alarm sounds and wakes the player up!](https://youtu.be/f377g2wtfiY)
+
+\*\*
 
 
 ## Part E. Costume the device
@@ -117,16 +156,32 @@ Only now should you start worrying about what the device should look like. Devel
 
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
-\*\***Include sketches of what your device might look like here.**\*\*
+\*\***Include sketches of what your device might look like here.**
 
-\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
+![Device Design 1](device-sketch.jpg)
+
+\*\*
+
+\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**
+
+This device contains the screen for the light, a thermometer with a needle point that is attached to the device by a magnet, and a protective heat pad on the back of the device.  The thermometer could be helpful when checking the food in the oven to see how rare the food is.  The heat pad on the back of the device could be useful when taking food out of the oven because you would be able to flip the device over and place the tray of food on the back of the device.  In terms of concerns, the device is prone to splattering food and water in the kitchen.  It also may be hard to hold if you were to carry it around with food on the back of it.  Some handles on the side may be useful, however, I was unable to find an intelligent way of putting these on the device.
+
+\*\*
 
 
 ## Part F. Record
 
-\*\***Take a video of your prototyped interaction.**\*\*
+\*\***Take a video of your prototyped interaction.**
 
-\*\***Please indicate anyone you collaborated with on this Lab.**\*\*
+[Device Protoype](https://youtu.be/Jo15KdRkPyw)
+
+\*\*
+
+\*\***Please indicate anyone you collaborated with on this Lab.**
+
+Aside from conversing with numerous students in the classroom, I worked alone on this lab.  I used YouTube to generate links for my videos and GitHub to upload my files to my repository.
+
+\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
 
