@@ -195,7 +195,11 @@ This describes the second week's work for this lab activity.
 
 You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
 
-\*\***Summarize feedback from your partners here.**\*\*
+\*\***Summarize feedback from your partners here.**
+
+Most of my feedback was positive.  Each person understood my idea and thought it would be very applicable, espcially to older ovens.  The common critique I received was that instead of having two devices - one mobile and one stationary device - I could just have the device be mobile.  Another critique that I got was that the heatpad on the back of the device was not needed, however, in my opinion, this was part of dress-up the device and making it service two purposes.
+
+\*\*
 
 ## Make it your own
 
@@ -204,4 +208,38 @@ Do last week’s assignment again, but this time:
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors! Again, be creative!
 3) We will be grading with an emphasis on creativity. 
 
-\*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+\*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**
+
+**_Setting:_** A a mobile device is wirelessly connected to an oven in the kitchen.  Because it is wireless, the device can be taken to any room within a household or apartment, in addition to the kitchen.   
+
+**_Players:_** The primary person involved is the person who turns on the oven and is waiting for it to heat up.  They usually will be holding the device connected to the oven.  In addition to this, their family could be involved and if they lived in an apartment, their neighbors might hear the "ding", "sizzle", or "alarm" sound given off by either devices. 
+
+**_Activity:_** A person turns on the oven and the device turns blue.  The person is then able to use it as a handheld device and see the device's color in realtime.  As the oven heats up, the device turns red.  Once the oven has reached the person's desired heat, the device is completely red and sounds off a "Ding".  If the person does not use the oven within 5 minutes, the device turns orange and repeats a "sizzle" sound.  Once the device is orange, if 5 more minutes go by and the oven has not been used, the device sounds an "alarm".
+
+**_Goals_:** The goal of the primary player is to quickly cook food for oneself and/or one's family using the oven.  The device will fulfill this goal by telling the person as soon as the oven is heated.  Another goal is that the player does not want to cause a fire or hazard within his kitchen.  The device will fulfill this goal by sizzling and sounding an alarm when the oven has been heated for too long without interaction.
+
+**_Storyboard:_**
+
+![storyboard2](Lab1-storyboard2.jpg)
+
+
+**_Prototype:_**
+
+[Device Design 1](device-sketch.jpg)
+
+[Device Protoype](https://youtu.be/Jo15KdRkPyw)
+
+
+**_Scenes:_**
+
+Scene 1 - [Turning on the oven](https://youtu.be/0jKUdBpO7bE)
+
+Scene 2 - [Device turning red in the kitchen](https://youtu.be/LS9ATyc3p1s) | [Device turning red in the living room](https://youtu.be/Mk7APGHyL7A)
+
+Scene 3 - [Oven ready, device is red and plays a ding](https://youtu.be/CM_9ZRjprDQ) | [The player has fallen asleep!](https://youtu.be/R8uvVL6ftuI)
+
+Scene 4 - [Oven has been running for a while](https://youtu.be/MOepwv-II4c)
+
+Scene 5 - [Device alarm sounds and wakes the player up!](https://youtu.be/f377g2wtfiY)
+
+\*\*
