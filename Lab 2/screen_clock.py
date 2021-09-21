@@ -30,9 +30,6 @@ disp = st7789.ST7789(
 )
 
 #setup buttons
-backlight= digitalio.DigitalInOut(board.D22)
-backlight.switch_to_output()
-backlight.value= True
 buttonA= digitalio.DigitalInOut(board.D23)
 buttonB= digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
@@ -77,8 +74,6 @@ while True:
 
 
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py 
-    #print(time.strftime("%m/%d/%Y %H:%M:%S"), end="", flush= True)
-    #draw.text((0,top),time.strftime("%m/%d/%Y %H:%M:%S"),font= font,fill= "#0000FF")
 
     t= time.strftime("%m/%d/%Y %H:%M:%S")
 
@@ -123,10 +118,6 @@ while True:
 
 
 
-    print(buttonA.value)
-    print("break")
-    print(buttonB.value)
-
     count= 0
  
     tst= 1 
@@ -135,46 +126,49 @@ while True:
  
     while(tst == 0):
   
-        print("enter") 
         if not(buttonA.value) and not(buttonB.value):
             count= count + 1
             count= count % 8
-            print("here") 
+
+
+  
         elif (not(buttonA.value)):
             count= count + 1
             count= count % 8
-            print("here2") 
+
+
+ 
         elif (not(buttonB.value)):
             tst= 1 
-            print("here3") 
-     
+      
         if (count == 0):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#000000")
-            draw.text((width/2,height/2),"You're now in",font=font,fill= "#FFFFFF",anchor="ms")
-            draw.text((width/2,(height/2)+20),"The Wee Hours",font=font,fill= "#FFFFFF",anchor="ms")     
-        elif (count == 1):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#101049") 
-            draw.text((width/2,height/2),"Dawn is cracking!",font=font,fill= "#FFFFFF",anchor="ms")       
-        elif (count == 2):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#25c0e4")  
-            draw.text((width/2,height/2),"GOOD MORNING!",font=font,fill= "#f3bcee",anchor="ms")      
-        elif (count == 3): 
-            draw.rectangle((0,0,width,height),outline=0, fill= "#e8f93e")  
-            draw.text((width/2,height/2),"It's NOON",font=font,fill= "#ca070b",anchor="ms")      	 
-        elif (count == 4):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#f9a848")
-            draw.text((width/2,height/2),"The afternoon",font=font,fill= "#FFFFFF",anchor="ms")      	
-        elif (count == 5):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#9e6623")  
-            draw.text((width/2,height/2),"Dinner time",font=font,fill= "#FFFFFF",anchor="ms")      	
-        elif (count == 6):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#621f07")  
-            draw.text((width/2,height/2),"It's starting to get late....",font=font,fill= "#FFFFFF",anchor="ms")      
-        elif (count == 7):
-            draw.rectangle((0,0,width,height),outline=0, fill= "#000000")  
-            draw.text((width/2,height/2),"Less than 2 hours",font=font,fill= "#FFFFFF",anchor="ms")      
-            draw.text((width/2,(height/2)+20),"from midnight!",font=font,fill= "#FFFFFF",anchor="ms")      
-     
+           draw.rectangle((0,0,width,height),outline=0, fill= "#000000")
+           draw.text((width/2,height/2),"You're now in",font=font,fill= "#FFFFFF",anchor="ms")
+           draw.text((width/2,(height/2)+20),"The Wee Hours",font=font,fill= "#FFFFFF",anchor="ms")     
+        if (count == 1):
+           draw.rectangle((0,0,width,height),outline=0, fill= "#101049") 
+           draw.text((width/2,height/2),"Dawn is cracking!",font=font,fill= "#FFFFFF",anchor="ms")       
+        if (count == 2):
+           draw.rectangle((0,0,width,height),outline=0, fill= "#25c0e4")  
+           draw.text((width/2,height/2),"GOOD MORNING!",font=font,fill= "#f3bcee",anchor="ms")      
+        if (count == 3): 
+           draw.rectangle((0,0,width,height),outline=0, fill= "#e8f93e")  
+           draw.text((width/2,height/2),"It's NOON",font=font,fill= "#ca070b",anchor="ms")      	 
+        if (count == 4):
+           draw.rectangle((0,0,width,height),outline=0, fill= "#f9a848")
+           draw.text((width/2,height/2),"The afternoon",font=font,fill= "#FFFFFF",anchor="ms")      	
+        if (count == 5):
+           draw.rectangle((0,0,width,height),outline=0, fill= "#9e6623")  
+           draw.text((width/2,height/2),"Dinner time",font=font,fill= "#FFFFFF",anchor="ms")      	
+        if (count == 6):
+           draw.rectangle((0,0,width,height),outline=0, fill= "#621f07")  
+           draw.text((width/2,height/2),"It's starting to get late....",font=font,fill= "#FFFFFF",anchor="ms")      
+        if (count == 7):
+           draw.rectangle((0,0,width,height),outline=0, fill= "#000000")  
+           draw.text((width/2,height/2),"Less than 2 hours",font=font,fill= "#FFFFFF",anchor="ms")      
+           draw.text((width/2,(height/2)+20),"from midnight!",font=font,fill= "#FFFFFF",anchor="ms")      
+        disp.image(image, rotation)
+        time.sleep(1) 
 
 
 
