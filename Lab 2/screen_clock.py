@@ -87,41 +87,56 @@ while True:
     #if between 8 and 10 --> dark brown
     #if between 10 and midnight --> black
 
-    hr= t[11:13]  
+    hr= t[11:13] 
+    date= t[0:11] 
  
     if(hr >= "00" and hr< "04"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#000000")
         draw.text((width/2,height/2),"You're now in",font=font,fill= "#FFFFFF",anchor="ms")
         draw.text((width/2,(height/2)+20),"The Wee Hours",font=font,fill= "#FFFFFF",anchor="ms")     
+        draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
     elif (hr >= "04" and hr < "08"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#101049") 
         draw.text((width/2,height/2),"Dawn is cracking!",font=font,fill= "#FFFFFF",anchor="ms")       
+        draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
     elif (hr >= "08" and hr < "12"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#25c0e4")  
         draw.text((width/2,height/2),"GOOD MORNING!",font=font,fill= "#f3bcee",anchor="ms")      
+        draw.text((width/2,(height/6)),date,font=font,fill= "#f3bcee",anchor= "ms")
     elif (hr >= "12" and hr < "13"): 
         draw.rectangle((0,0,width,height),outline=0, fill= "#e8f93e")  
         draw.text((width/2,height/2),"It's NOON",font=font,fill= "#ca070b",anchor="ms")      	 
+        draw.text((width/2,(height/6)),date,font=font,fill= "#ca070b",anchor= "ms")
     elif (hr >= "13" and hr < "17"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#f9a848")
         draw.text((width/2,height/2),"The afternoon",font=font,fill= "#FFFFFF",anchor="ms")      	
+        draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
     elif (hr >= "17" and hr < "20"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#9e6623")  
         draw.text((width/2,height/2),"Dinner time",font=font,fill= "#FFFFFF",anchor="ms")      	
+        draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
     elif (hr >= "20" and hr < "22"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#621f07")  
         draw.text((width/2,height/2),"It's starting to get late....",font=font,fill= "#FFFFFF",anchor="ms")      
+        draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
+
     elif (hr >= "22" and hr < "24"):
         draw.rectangle((0,0,width,height),outline=0, fill= "#000000")  
         draw.text((width/2,height/2),"Less than 2 hours",font=font,fill= "#FFFFFF",anchor="ms")      
         draw.text((width/2,(height/2)+20),"from midnight!",font=font,fill= "#FFFFFF",anchor="ms")      
+        draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
 
 
 
     count= 0
  
     tst= 1 
-    if not(buttonA.value) or not(buttonB.value):
+    if not(buttonA.value) and not(buttonB.value): 
+        draw.rectangle((0,0,width,height),outline=0, fill= "#00ff00")
+        draw.text((width/2,height/2),"Current Time",font=font,fill= "#800000",anchor="ms")
+        draw.text((width/2,(height/2)+20),t[11:len(t)],font=font,fill= "#800000",anchor="ms")     
+        draw.text((width/2,(height/6)),date,font=font,fill= "#800000",anchor= "ms")
+    elif not(buttonA.value) or not(buttonB.value):
         tst= 0   
  
     while(tst == 0):
@@ -145,28 +160,36 @@ while True:
            draw.rectangle((0,0,width,height),outline=0, fill= "#000000")
            draw.text((width/2,height/2),"You're now in",font=font,fill= "#FFFFFF",anchor="ms")
            draw.text((width/2,(height/2)+20),"The Wee Hours",font=font,fill= "#FFFFFF",anchor="ms")     
+           draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
         if (count == 1):
            draw.rectangle((0,0,width,height),outline=0, fill= "#101049") 
            draw.text((width/2,height/2),"Dawn is cracking!",font=font,fill= "#FFFFFF",anchor="ms")       
+           draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
         if (count == 2):
            draw.rectangle((0,0,width,height),outline=0, fill= "#25c0e4")  
            draw.text((width/2,height/2),"GOOD MORNING!",font=font,fill= "#f3bcee",anchor="ms")      
+           draw.text((width/2,(height/6)),date,font=font,fill= "#f3bcee",anchor= "ms")
         if (count == 3): 
            draw.rectangle((0,0,width,height),outline=0, fill= "#e8f93e")  
            draw.text((width/2,height/2),"It's NOON",font=font,fill= "#ca070b",anchor="ms")      	 
+           draw.text((width/2,(height/6)),date,font=font,fill= "#ca070b",anchor= "ms")
         if (count == 4):
            draw.rectangle((0,0,width,height),outline=0, fill= "#f9a848")
            draw.text((width/2,height/2),"The afternoon",font=font,fill= "#FFFFFF",anchor="ms")      	
+           draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
         if (count == 5):
            draw.rectangle((0,0,width,height),outline=0, fill= "#9e6623")  
            draw.text((width/2,height/2),"Dinner time",font=font,fill= "#FFFFFF",anchor="ms")      	
+           draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
         if (count == 6):
            draw.rectangle((0,0,width,height),outline=0, fill= "#621f07")  
            draw.text((width/2,height/2),"It's starting to get late....",font=font,fill= "#FFFFFF",anchor="ms")      
+           draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
         if (count == 7):
            draw.rectangle((0,0,width,height),outline=0, fill= "#000000")  
            draw.text((width/2,height/2),"Less than 2 hours",font=font,fill= "#FFFFFF",anchor="ms")      
            draw.text((width/2,(height/2)+20),"from midnight!",font=font,fill= "#FFFFFF",anchor="ms")      
+           draw.text((width/2,(height/6)),date,font=font,fill= "#FFFFFF",anchor= "ms")
         disp.image(image, rotation)
         time.sleep(1) 
 
