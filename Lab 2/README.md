@@ -206,7 +206,6 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 - add the date
 - maybe use the buttons to see the exact time
-- maybe add more colors
 
 # Prep for Part 2
 
@@ -225,4 +224,6 @@ As always, make sure you document contributions and ideas from others explicitly
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
 
+**Lab 2 Documentation**
 
+For Lab 2, I decided to add functionality for the user to be able to see the exact time and there is now a feature for the date to be shown at all times.  To see the exact time, the user must hold down both buttons.  Once they let go, the screen will return back to the default time screen.
