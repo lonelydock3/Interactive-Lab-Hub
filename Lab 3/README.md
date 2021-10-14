@@ -161,10 +161,10 @@ The system should:
 
 *Include videos or screencaptures of both the system and the controller.*
 
-###Device Demo
-[To Do Pi Device](ToDoPi.mp4)
+### Device Demo
+[To Do Pi Device](https://youtu.be/UHWdSK6nMUc)
 
-###How it works
+### How it works
 This device uses speech-to-text and text-to-speech to listen to certain questions and provide answers to these questions.  The "To Do Pi" can store a to do list, read out the to do list, tell the user the date, and tell the user the time.  The device initially sits in "idle mode" until the user swipes their hand near the device's sensor.  Once the sensor is triggered, the device says "Hello, how can I help you?"  From here the user can ask for the date, time, to add to their to do list, or to hear their current to do list.  Once the user asks the device a question, the device will process the inputted data recorded and relay an answer through a speak that is connected to it.  After this response is given, the device will enter back into "idle mode".
 
 ## Test the system
