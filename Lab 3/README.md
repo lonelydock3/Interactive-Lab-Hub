@@ -161,24 +161,32 @@ The system should:
 
 *Include videos or screencaptures of both the system and the controller.*
 
+###Device Demo
+[To Do Pi Device](ToDoPi.mp4)
+
+###How it works
+This device uses speech-to-text and text-to-speech to listen to certain questions and provide answers to these questions.  The "To Do Pi" can store a to do list, read out the to do list, tell the user the date, and tell the user the time.  The device initially sits in "idle mode" until the user swipes their hand near the device's sensor.  Once the sensor is triggered, the device says "Hello, how can I help you?"  From here the user can ask for the date, time, to add to their to do list, or to hear their current to do list.  Once the user asks the device a question, the device will process the inputted data recorded and relay an answer through a speak that is connected to it.  After this response is given, the device will enter back into "idle mode".
+
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+
+Unfortunately, I was unable to get a partner to test out my device, due to fall break, but I was able to test my system environment extensively.  In my opinion, the device itself was useful, however, there were a few limitations.  To add to the to do list, a user must re-record their entire to do list because it will overwrite the audio clip that stood in place of their previous to do list.  The user was also unable to edit a to do list or schedule their tasks within the to do list.  Having said that, the system did a great job of providing accurate dates and times and a to do list, or even voice memos, that can certainly come in handy to anyone.  
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+In terms of positives, the device did a great job picking up the audio, no matter how quiet it was.  It also had great text-to-speech quality and the outputted audio was always very clear.  The sensor also worked very well, as I did not have any issues with thresholds or getting it to trigger.  For negatives, the one aspect that stood out to me was the speech-to-text accuracy.  There were often times when the device misheard certain words from the inputted audio.  I did notice that this issue was slightly dependant on what your "recommended" words were within the python script, however, there were also moments where words were completely off.  To minimize this, it is best for the user to speak loud and clear into the microphone.
+
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
+This lab was interesting because it really forced me to put myself in the shoes of the user.  I needed to consider a wide range of possibilities for how the user might interact with my device, so that I could allow them to easily use it.  Initially, I began building this device based on how I thought it should turn out, however, once I started using it myself, I was able to eliminate, add, and tweak features to make the device more user-friendly.  This project also enabled me to consider different impressions of the device, which led to me adjusting the device's interface.  For example, I was initially going to use the accelorometer as a sensor, but I felt that a proximity sensor would be more intuitive for the user to use.  I also simplified the device's dialogue, so that the user did less listening and more interacting with the device.
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+A dataset could be created with the interaction of this device through multiple ways.  First, the speech inputted by the user can be captured as data and with a form of feedback from the user on device performance, the device would be able to adjust what it is listening for, espcially based on different users.  In terms of my system, the to do list could be a dataset that the user could edit, remove, and add to, along with incorporating dates and times with different items on the to do list.  For other sensing modalities, a voice activation sensor could be used to trigger the device, a camera could be used to detect who is using the device, and different buttons could be used for device feedback and inputs.
 
