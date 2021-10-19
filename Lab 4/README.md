@@ -156,7 +156,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joyst
 
 Note: We did not distribute this sensor to you, so if you are interested in playing with it, please come pick it up from the TA!
 
-Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25Â° and is able to detect objects up to 3 meters away! 
+Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25Ã‚Â° and is able to detect objects up to 3 meters away! 
 
 <p float="left">
 <img src="https://cdn.sparkfun.com//assets/parts/1/6/0/3/4/17072-Qwiic_Multi_Distance_Sensor_-_VL53L3CX-01.jpg" height="200" />
@@ -177,9 +177,24 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
+
+![image](PartC-Sketch12.png)
+![image](PartC-Sketch35.png)
+
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+Drawing the potential uses of the sensor gave a really well intuitive understanding of the possiblity of the applications. Using light/color/proximity sensor could really ease up our lives. Although there are great uses of the sensor it is important to address some of these questions:
+
+- How will people really interact with the device? 
+- Where to place the sensors in the device to get the best signal?
+- What would be the best ergonomic design detail? Something to make the device more appealing
+
+We would need to prototype how the form factor of the device to get a better understanding of how will people really interact with the device. Also, implementing sensors with the device could allow us to test out the signals from the sensor. Although the initial phyiscal prototype may not showcase the best ergonomics but it could allow us to think about the next steps to make the prototype better.
+
 **\*\*\*Pick one of these designs to prototype.\*\*\***
+
+For our lab we chose the first use of the sensor. We want to build an alarm system that would notify user based on sunlight. 
 
 
 ### Part D
@@ -239,7 +254,7 @@ We are deciding to pick the 5th design.
 
 We chose the 5th one because it can easily incorporate the raspberry pi, LEDs, LED screen, and buttons within a simple and portable box layout, but the differentiating factor is that there will be an adjustable flap that sits on top of the box with the sensor attached to it.  The idea with this is that the user can position the flap so that the sensor is able to get the best reading possible from a window or other light source.
 
-Build a cardbord prototype of your design.
+Build a cardboard prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
