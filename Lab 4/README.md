@@ -2,6 +2,8 @@
 
 For lab this week, we focus on both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
 
+## NOTE: For this lab, Brett O'Connor (bwo7) and Gazi Inkiyad (gi45) are working together.
+
 ## Part 1 Lab Preparation
 
 ### Get the latest content:
@@ -154,7 +156,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joyst
 
 Note: We did not distribute this sensor to you, so if you are interested in playing with it, please come pick it up from the TA!
 
-Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25° and is able to detect objects up to 3 meters away! 
+Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25Â° and is able to detect objects up to 3 meters away! 
 
 <p float="left">
 <img src="https://cdn.sparkfun.com//assets/parts/1/6/0/3/4/17072-Qwiic_Multi_Distance_Sensor_-_VL53L3CX-01.jpg" height="200" />
@@ -220,11 +222,22 @@ Think about how you want to present the information about what your sensor is se
  
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
 
+![Sketch 1](Part1D-Sketch1.PNG)
+![Sketch 2](Part1D-Sketch2.PNG)
+![Sketch 3 and 4](Part1D-Sketch34.PNG)
+![Sketch 5](Part1D-Sketch5.PNG)
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+
+The biggest question is how to position the prototype so that the sensor is able to get the best reading possible.  In terms of prototyping, having a design with a way to adjust where the sensor is on the device would be useful.  In addition to this, the LED screen needs to be in a visible area so that it is easy to see for the user and the buttons must be placed on the device so that they are easily accessible.
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
+We are deciding to pick the 5th design.
+
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+We chose the 5th one because it can easily incorporate the raspberry pi, LEDs, LED screen, and buttons within a simple and portable box layout, but the differentiating factor is that there will be an adjustable flap that sits on top of the box with the sensor attached to it.  The idea with this is that the user can position the flap so that the sensor is able to get the best reading possible from a window or other light source.
 
 Build a cardbord prototype of your design.
 
