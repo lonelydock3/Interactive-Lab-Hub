@@ -222,10 +222,10 @@ Think about how you want to present the information about what your sensor is se
  
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
 
-![Sketch 1](Part1D-Sketch1.PNG)
-![Sketch 2](Part1D-Sketch2.PNG)
-![Sketch 3 and 4](Part1D-Sketch34.PNG)
-![Sketch 5](Part1D-Sketch5.PNG)
+![Sketch 1](PartD-Sketch1.PNG)
+![Sketch 2](PartD-Sketch2.PNG)
+![Sketch 3 and 4](PartD-Sketch34.PNG)
+![Sketch 5](PartD-Sketch5.PNG)
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
