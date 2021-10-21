@@ -258,6 +258,12 @@ Build a cardboard prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
+![Part 1 Prototype](Part1-Prototype.PNG)
+
+The image shows where the buttons, the screen, the speaker, the LEDs, and the sensor will be put on the device.  The flap, as shown in the video below, can be adjusted, with the hope of placing the sensor in the optimal position for the light source.
+
+[Part 1 Prototype Video](https://youtu.be/n37qv1yvxTY)
+
 
 LAB PART 2
 
