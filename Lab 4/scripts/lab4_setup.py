@@ -2,7 +2,7 @@ from datetime import datetime
 import qwiic_oled_display
 import sys
 import time
-from speech2text_pt2 import speech2text
+# from speech2text_pt2 import speech2text
 import subprocess
 import digitalio
 import board
