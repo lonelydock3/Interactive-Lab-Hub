@@ -2,7 +2,6 @@ from datetime import datetime
 import qwiic_oled_display
 import sys
 import time
-# from speech2text_pt2 import speech2text
 import subprocess
 import digitalio
 import board
@@ -10,30 +9,30 @@ from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 import adafruit_rgb_display.st7789 as st7789
 from adafruit_rgb_display.rgb import color565
 
-### OLED Display
-# Initialize OLEDs
-myOLED = qwiic_oled_display.QwiicOledDisplay()
-def runDisplay():
-
-    #  These lines of code are all you need to initialize the OLED display and print text on the screen.
-    myOLED.begin()
-
-    # print("\nSparkFun Qwiic OLED Display - Hello Example\n")
-
-    if myOLED.is_connected() == False:
-        print("The Qwiic OLED Display isn't connected to the system. Please check your connection", \
-            file=sys.stderr)
-        return
-    
-    #  Before you can start using the OLED, call begin() to init all of the pins and configure the OLED.
-
-    myOLED.clear(myOLED.PAGE)  #  Clear the display's buffer
-    myOLED.set_font_type(1)
-
-    myOLED.print(time.strftime("%I:%M:%S %p"))  #  Add "Hello World" to buffer
-
-    #  To actually draw anything on the display, you must call the display() function. 
-    myOLED.display()
+# ### OLED Display
+# # Initialize OLEDs
+# myOLED = qwiic_oled_display.QwiicOledDisplay()
+# def runDisplay():
+# 
+#     #  These lines of code are all you need to initialize the OLED display and print text on the screen.
+#     myOLED.begin()
+# 
+#     # print("\nSparkFun Qwiic OLED Display - Hello Example\n")
+# 
+#     if myOLED.is_connected() == False:
+#         print("The Qwiic OLED Display isn't connected to the system. Please check your connection", \
+#             file=sys.stderr)
+#         return
+#     
+#     #  Before you can start using the OLED, call begin() to init all of the pins and configure the OLED.
+# 
+#     myOLED.clear(myOLED.PAGE)  #  Clear the display's buffer
+#     myOLED.set_font_type(1)
+# 
+#     myOLED.print(time.strftime("%I:%M:%S %p"))  #  Add "Hello World" to buffer
+# 
+#     #  To actually draw anything on the display, you must call the display() function. 
+#     myOLED.display()
 
 # while True:
 #     runDisplay()
@@ -51,21 +50,21 @@ def time_diff(start, end):
     Output:
     Time difference in hours: mins
     """
-    format = '%H:%M:%S'
-    t_delta = datetime.strptime(end, format) - datetime.strptime(start, format)
+    format = '%H:%M'
+    t_delta = datetime.strptime(end[0:len(end)-3], format) - datetime.strptime(start[0:len(start)-3], format)
     hrs_delta = t_delta.seconds // 3600
     mins_delta = (t_delta.seconds - hrs_delta * 3600) // 60
 
     return f'{hrs_delta} hours and {mins_delta} minutes'
 
 ### Text to Speech
-def alarm_speech(hrs_slept = None):
+def alarm_speech(start_time):
     cur_time = time.strftime("%I:%M %p")
-    sleep_hr = '5'
+    sleep_hr = time_diff(start_time, cur_time) 
     cmd = '''
                 say() { local IFS=+;/usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=en"; }\
                 ''' + f'''
-                say "Hey it's time to wake up. Right now its {cur_time}. You've slept for {sleep_hr} hours."
+                say "Hey it's time to wake up. Right now its {cur_time}."
                 '''
     subprocess.check_output(cmd, shell=True)
 
@@ -144,6 +143,7 @@ def display_weather():
     draw.text((x, y), wttr, font=font2, fill="#FFC300")
     y += font2.getsize(wttr)[1]
     disp.image(image, rotation)
+    time.sleep(1.5)
 
 
 ### Display Time
@@ -216,13 +216,13 @@ def display_time():
     y += font.getsize(cur_time)[1]
     # Display image.
     disp.image(image, rotation)
-    time.sleep(1)
+    time.sleep(1.5)
 
     # backlight.value = False
     
 
 ### Display threshold
-def display_threshold(thresh):    
+def display_threshold(thresh, sensor_value):    
     cs_pin = digitalio.DigitalInOut(board.CE0)
     dc_pin = digitalio.DigitalInOut(board.D25)
     reset_pin = None
@@ -271,6 +271,7 @@ def display_threshold(thresh):
     # same directory as the python script!
     # Some other nice fonts to try: http://www.dafont.com/bitmap.php
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
+    font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
     # Turn on the backlight
     backlight = digitalio.DigitalInOut(board.D22)
@@ -278,6 +279,7 @@ def display_threshold(thresh):
     backlight.value = True
 
     thresh_statement = f'Threshold: {thresh}'
+    sensor_statement = f'Sensor Value: {sensor_value}'
 
     # for i in range(10):
         # Draw a black filled box to clear the image.
@@ -285,6 +287,9 @@ def display_threshold(thresh):
     y = top
     draw.text((x, y), thresh_statement, font=font, fill="#00FF00")
     y += font.getsize(thresh_statement)[1]
+    
+    draw.text((x, y), sensor_statement, font=font2, fill="#00FF00")
+    y += font.getsize(sensor_statement)[1]
     # Display image.
     disp.image(image, rotation)
-    time.sleep(1)
+    time.sleep(1.5)

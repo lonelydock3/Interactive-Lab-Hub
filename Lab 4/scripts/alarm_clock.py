@@ -89,7 +89,12 @@ def change_threshold(x, threshold):
         threshold = 1200
     return threshold
 
-def light_sensor(THRESHOLD):
+def get_sensor_val():
+    r, g, b, c = apds.color_data
+    light_lux= colorutility.calculate_lux(r, g, b)
+    return light_lux
+
+def light_sensor(THRESHOLD, start_time):
 
     while True:
         # create some variables to store the color data in
@@ -104,7 +109,8 @@ def light_sensor(THRESHOLD):
         if light_lux >= THRESHOLD:
             print("wake up")
             # ------------ CALL ALARM FUNCTION HERE --------------
-            # break;
+            alarm_speech(start_time)
+            break;
         else:
             print("sleep")
     
@@ -125,8 +131,8 @@ while(1):
     # Joystick clicked
     if (joyButton == 0):
         case += 1
-        # case = case % 3
-        case = case % 2
+        case = case % 3
+        # case = case % 2
 
     # Handle screen
     if (case == 0):
@@ -137,8 +143,9 @@ while(1):
         # Weather screen
         display_weather() 
 
-    # elif (case == 2):
-    #     # Threshold screen 
+    elif (case == 2):
+        # Threshold screen 
+        display_threshold(THRESHOLD, get_sensor_val()) 
      
     # Handle threshold changes
     THRESHOLD = change_threshold(joyX, THRESHOLD) 
@@ -148,7 +155,7 @@ while(1):
         write_register(button, 0x19, 255)
         start_time= set_alarm()
         # Call light_sensor
-        light_sensor(THRESHOLD)
+        light_sensor(THRESHOLD, start_time)
 
     # otherwise turn it off
     else:
