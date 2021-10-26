@@ -2,7 +2,7 @@ from datetime import datetime
 import qwiic_oled_display
 import sys
 import time
-from speech2text_pt2 import speech2text
+# from speech2text_pt2 import speech2text
 import subprocess
 import digitalio
 import board
@@ -12,28 +12,28 @@ from adafruit_rgb_display.rgb import color565
 
 ### OLED Display
 # Initialize OLEDs
-myOLED = qwiic_oled_display.QwiicOledDisplay()
-def runDisplay():
-
-    #  These lines of code are all you need to initialize the OLED display and print text on the screen.
-    myOLED.begin()
-
-    # print("\nSparkFun Qwiic OLED Display - Hello Example\n")
-
-    if myOLED.is_connected() == False:
-        print("The Qwiic OLED Display isn't connected to the system. Please check your connection", \
-            file=sys.stderr)
-        return
-    
-    #  Before you can start using the OLED, call begin() to init all of the pins and configure the OLED.
-
-    myOLED.clear(myOLED.PAGE)  #  Clear the display's buffer
-    myOLED.set_font_type(1)
-
-    myOLED.print(time.strftime("%I:%M:%S %p"))  #  Add "Hello World" to buffer
-
-    #  To actually draw anything on the display, you must call the display() function. 
-    myOLED.display()
+# myOLED = qwiic_oled_display.QwiicOledDisplay()
+# def runDisplay():
+# 
+#     #  These lines of code are all you need to initialize the OLED display and print text on the screen.
+#     myOLED.begin()
+# 
+#     # print("\nSparkFun Qwiic OLED Display - Hello Example\n")
+# 
+#     if myOLED.is_connected() == False:
+#         print("The Qwiic OLED Display isn't connected to the system. Please check your connection", \
+#             file=sys.stderr)
+#         return
+#     
+#     #  Before you can start using the OLED, call begin() to init all of the pins and configure the OLED.
+# 
+#     myOLED.clear(myOLED.PAGE)  #  Clear the display's buffer
+#     myOLED.set_font_type(1)
+# 
+#     myOLED.print(time.strftime("%I:%M:%S %p"))  #  Add "Hello World" to buffer
+# 
+#     #  To actually draw anything on the display, you must call the display() function. 
+#     myOLED.display()
 
 # while True:
 #     runDisplay()
@@ -61,7 +61,7 @@ def time_diff(start, end):
 ### Text to Speech
 def alarm_speech(hrs_slept = None):
     cur_time = time.strftime("%I:%M %p")
-    sleep_hr = '5'
+    sleep_hr = time_diff( , cur_time) 
     cmd = '''
                 say() { local IFS=+;/usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=en"; }\
                 ''' + f'''

@@ -2,6 +2,9 @@ from __future__ import print_function
 import sys
 import time
 
+# Gazi's file
+from lab4_setup import *
+
 import board
 import busio
 from adafruit_bus_device.i2c_device import I2CDevice
@@ -24,18 +27,7 @@ button = I2CDevice(i2c2, DEVICE_ADDRESS)
 i2c = board.I2C()
 apds = APDS9960(i2c)
 apds.enable_color = True
-myJoystick= quiic_joystick.QuiicJoystick()
-
-# clear out LED lighting settings. For more info https://cdn.sparkfun.com/assets/learn_tutorials/1/1/0/8/Qwiic_Button_I2C_Register_Map.pdf
-write_register(button, 0x1A, 1)
-write_register(button, 0x1B, 0, 2)
-write_register(button, 0x19, 0)
-
-# Initialize the joystick
-myJoystick.begin()
-
-# Light sensor threshold
-THRESHOLD= 500
+myJoystick= qwiic_joystick.QwiicJoystick()
 
 def write_register(dev, register, value, n_bytes=1):
     # Write a wregister number and value
@@ -53,10 +45,20 @@ def read_register(dev, register, n_bytes=1):
         dev.write_then_readinto(reg, buf)
     return int.from_bytes(buf, 'little')
 
+# clear out LED lighting settings. For more info https://cdn.sparkfun.com/assets/learn_tutorials/1/1/0/8/Qwiic_Button_I2C_Register_Map.pdf
+write_register(button, 0x1A, 1)
+write_register(button, 0x1B, 0, 2)
+write_register(button, 0x19, 0)
+
+# Initialize the joystick
+myJoystick.begin()
+
+# Light sensor threshold
+THRESHOLD= 500
 
 # Used to make sure all devices are connected, 1 if connected, 0 if not
 def connections():
-    if !myJoystick.connected:
+    if not(myJoystick.connected):
         print("Joystick not connected")
         return 0
     else:
@@ -102,6 +104,7 @@ def light_sensor(THRESHOLD):
         if light_lux >= THRESHOLD:
             print("wake up")
             # ------------ CALL ALARM FUNCTION HERE --------------
+            # break;
         else:
             print("sleep")
     
@@ -122,31 +125,34 @@ while(1):
     # Joystick clicked
     if (joyButton == 0):
         case += 1
-        case = case % 3
+        # case = case % 3
+        case = case % 2
 
     # Handle screen
     if (case == 0):
         # Time screen
+        display_time()
 
     elif (case == 1):
         # Weather screen
+        display_weather() 
 
-    elif (case == 2):
-        # Threshold screen 
+    # elif (case == 2):
+    #     # Threshold screen 
      
     # Handle threshold changes
     THRESHOLD = change_threshold(joyX, THRESHOLD) 
 
     # Handle alarm
     if (btn_status&IS_PRESSED) !=0:
-        write_register(device, 0x19, 255)
+        write_register(button, 0x19, 255)
         start_time= set_alarm()
         # Call light_sensor
         light_sensor(THRESHOLD)
 
     # otherwise turn it off
     else:
-        write_register(device, 0x19, 0)
+        write_register(button, 0x19, 0)
     # don't slam the i2c bus
     time.sleep(0.1)
 
