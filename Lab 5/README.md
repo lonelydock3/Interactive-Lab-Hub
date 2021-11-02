@@ -1,6 +1,6 @@
 # Observant Systems
 
-NOTE: Brett O'Connor (bwo7) and Gazi Inkiyad (gi45) will be working together as partners on this lab.
+**NOTE: Brett O'Connor (bwo7) and Gazi Inkiyad (gi45) will be working together as partners on this lab.**
 
 For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
 Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
@@ -101,6 +101,30 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+#### Contours Detection
+
+![contours](images/contours-detection.png)
+
+Contour detection can be used with a camera to make out different shapes and analyze objects features.  This is because it nearly traces an objects borders.
+
+#### Face Detection
+
+![face](images/face-detection.png)
+
+Face detection can be used by a camera in an office building to determine, who came to the office.  It would do this by picking up a persons face on the camera and comparing the faces features to pictures of the employees.
+
+#### Flow Detection
+
+![flow](images/flow-detection.png)
+
+Flow detection can be used on different roads to see how the traffic was on specific days.  In this scenario, a camera would be placed, pointing at a road and each time a car drove by, the flow detection would trigger, drawing a line where the car was.
+
+#### Object Detection
+
+![object](images/object-detection.png)
+
+Object detection is a great application for self-driving automobilies, as it uses this detection to make sure that the vehile does not collide with any objects.
+
 #### MediaPipe
 
 A more recent open source and efficient method of extracting information from video streams comes out of Google's [MediaPipe](https://mediapipe.dev/), which offers state of the art face, face mesh, hand pose, and body pose detection.
@@ -172,6 +196,12 @@ This might take a while to get fully installed. After installation, connect your
 (**Optionally**: You can train your own model, too. First, visit [TeachableMachines](https://teachablemachine.withgoogle.com/train), select Image Project and Standard model. Second, use the webcam on your computer to train a model. For each class try to have over 50 samples, and consider adding a background class where you have nothing in view so the model is trained to know that this is the background. Then create classes based on what you want the model to classify. Lastly, preview and iterate, or export your model as a 'Tensorflow' model, and select 'Keras'. You will find an '.h5' file and a 'labels.txt' file. These are included in this labs 'teachable_machines' folder, to make the PPE model you used earlier. You can make your own folder or replace these to make your own classifier.)
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
+
+![background](images/ppe-background.png)
+![mask](images/ppe-mask.png)
+![no](images/ppe-no.png)
+
+To create a classifier for this, object-detection, face-detection, and contour-detection can be used.  If the camera detects an object, it will also check if that object is a face.  If there is a face and a contour on the face, then this will be classified as a "mask".  If there is a face and no contour, then this will be classified as "no".  If there is no face, then this will be classified as "background".  It is good to keep in mind, however, that things like facial hair, figurines, and complex objects can cause confusion or inaccuracies with the technology.
 
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
