@@ -248,6 +248,11 @@ For our interaction, we will be training a model that detects unusual activity t
 
 When experimenting for this, we used Teachable Machines to take photos of us mimicing an online test for class 1 and then we took photos of us doing "unusual activites" for class 2.  Then we saw how well the model worked.  We identified some edge cases, but for the most part, it worked well.
 
+The following are some images of our experimentation:
+
+![cheating](images/Cheating.png)
+![not cheating](<images/Not Cheating.png>)
+
 \*\*\*
 
 ### Part C
@@ -299,6 +304,8 @@ During the lecture, we mentioned questions to help characterize a material:
 \*\*\*
 
 **Include a short video demonstrating the answers to these questions.**
+
+[Our Video](https://drive.google.com/file/d/19o2JBpyXoL9EH9rZh9UjSpbehWMqxk4H/view?usp=sharing)
 
 \*\*\*
 
