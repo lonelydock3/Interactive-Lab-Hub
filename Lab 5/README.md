@@ -99,7 +99,9 @@ pi@ixe00:~$ cd ~/openCV-examples/object-detection
 pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 ```
 
-**\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
+\*\*\*
+
+**Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.**
 
 #### Contours Detection
 
@@ -124,6 +126,8 @@ Flow detection can be used on different roads to see how the traffic was on spec
 ![object](images/object-detection.png)
 
 Object detection is a great application for self-driving automobilies, as it uses this detection to make sure that the vehile does not collide with any objects.
+
+\*\*\*
 
 #### MediaPipe
 
@@ -159,10 +163,15 @@ Each of the installs will take a while, please be patient. After successfully in
 
 Try the two main features of this script: 1) pinching for percentage control, and 2) "[Quiet Coyote](https://www.youtube.com/watch?v=qsKlNVpY7zg)" for instant percentage setting. Notice how this example uses hardcoded positions and relates those positions with a desired set of events, in `hand_pose.py` lines 48-53. 
 
-**\*\*\*Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.\*\*\***
+\*\*\*
+
+**Consider how you might use this position based approach to create an interaction, and write how you might use it on either face, hand or body pose tracking.**
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
+For hand pose, you can use this technology with face detection to see an action that a user is performing, when they touch their face.  For example, a user could be itching its face, thinking, or signalling a gesture to someone else.
+
+\*\*\*
 
 
 #### Teachable Machines
@@ -195,7 +204,9 @@ This might take a while to get fully installed. After installation, connect your
 
 (**Optionally**: You can train your own model, too. First, visit [TeachableMachines](https://teachablemachine.withgoogle.com/train), select Image Project and Standard model. Second, use the webcam on your computer to train a model. For each class try to have over 50 samples, and consider adding a background class where you have nothing in view so the model is trained to know that this is the background. Then create classes based on what you want the model to classify. Lastly, preview and iterate, or export your model as a 'Tensorflow' model, and select 'Keras'. You will find an '.h5' file and a 'labels.txt' file. These are included in this labs 'teachable_machines' folder, to make the PPE model you used earlier. You can make your own folder or replace these to make your own classifier.)
 
-**\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
+\*\*\*
+
+**Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.**
 
 ![background](images/ppe-background.png)
 ![mask](images/ppe-mask.png)
@@ -203,6 +214,7 @@ This might take a while to get fully installed. After installation, connect your
 
 To create a classifier for this, object-detection, face-detection, and contour-detection can be used.  If the camera detects an object, it will also check if that object is a face.  If there is a face and a contour on the face, then this will be classified as a "mask".  If there is a face and no contour, then this will be classified as "no".  If there is no face, then this will be classified as "background".  It is good to keep in mind, however, that things like facial hair, figurines, and complex objects can cause confusion or inaccuracies with the technology.
 
+\*\*\*
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
 
@@ -228,7 +240,15 @@ Pick one of the models you have tried, pick a class of objects, and experiment w
 This can be as simple as the boat detector earlier.
 Try out different interaction outputs and inputs.
 
-**\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+\*\*\*
+
+**Describe and detail the interaction, as well as your experimentation here.**
+
+For our interaction, we will be training a model that detects unusual activity that occurs when a student is taking an online exam.  The camera will be pointed at a user and there will be multiple classes trained.  One class will involve the user looking at the computer, as if they are taking a test normall.  Another class will involve many cases that basically include the "unusual activity" - if a user exits the room, goes on their phone, looks away from their screen, etc.
+
+When experimenting for this, we used Teachable Machines to take photos of us mimicing an online test for class 1 and then we took photos of us doing "unusual activites" for class 2.  Then we saw how well the model worked.  We identified some edge cases, but for the most part, it worked well.
+
+\*\*\*
 
 ### Part C
 ### Test the interaction prototype
@@ -240,11 +260,28 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
-**\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
+\*\*\*
+
+**Think about someone using the system. Describe how you think this will work.**
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
+
+Observations:
+
+* Our interactive prototype worked well and did what it was supposed to do 
+* It fails when the user's body is completely turned away from the camera, but it seems to work when the user's body is oriented towards the camera
+* The reason why it fails when the user's body is turned away from the camera is because there is no proper class trained to detect this case.  Therefore, it results to the "vaguest" class to classify the interaction, which leads to it being named "unusual activity".  This is not always the correct outcome.  To fix this, we just need to add more training images to our second class.
+
+Someone using the system:
+
+1. The user is not aware of the uncertainties of the system and this is on purpose.  They should not know much about how the system works because if they did, they might try to exploit the vulnerabilities involved.
+2. If a miss classification occurs, the user has the potential to suffer, as they may be considered a "cheater" by their instructor.  This can lead to a user being suspended or expelled.
+3. To address this issue, we are going to need to add as many training situations possible to our first class (the test taking class).  This is to minimize the number of "unusual activity" outcomes, so the instructor is able to receive reasonable occurances of cheating.
+4. To optimize this algorithm, we can train images to cover all of the cases we find, however, we must be mindful of overtraining our models, as this can cause overfitting to occur.  In addition to this, if we could increase the FPS of our camera for our model, we would be able to get a better response and input for our model. 
+
+\*\*\*
 
 ### Part D
 ### Characterize your own Observant system
@@ -259,7 +296,11 @@ During the lecture, we mentioned questions to help characterize a material:
 * What are other properties/behaviors of X?
 * How does X feel?
 
-**\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
+\*\*\*
+
+**Include a short video demonstrating the answers to these questions.**
+
+\*\*\*
 
 ### Part 2.
 
