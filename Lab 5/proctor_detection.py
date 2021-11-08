@@ -43,6 +43,9 @@ for line in f.readlines():
     labels.append(line.split(' ')[1].strip())
 
 
+not_cheating = 0
+cheating = 0
+k = 0
 while(True):
     if webCam:
         ret, img = cap.read()
@@ -62,7 +65,23 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    print("I think its a:",labels[np.argmax(prediction)])
+
+    if k == 200:
+        k = 0
+        cheating = 0
+        not_cheating = 0
+    else:
+        k += 1
+
+    # 0 - not cheating, 1 - cheating
+    label = np.argmax(prediction)
+    if label == 0:
+        not_cheating += 1
+    else:
+        cheating += 1
+    ratio = cheating/(not_cheating+cheating)
+    percent= 100*ratio
+    print("Probability of Cheating: ",percent,'%')
 
     if webCam:
         if sys.argv[-1] == "noWindow":
