@@ -43,8 +43,8 @@ for line in f.readlines():
     labels.append(line.split(' ')[1].strip())
 
 
-not_cheating = 0
-cheating = 0
+not_cheating = 1
+cheating = 1
 k = 0
 while(True):
     if webCam:
@@ -68,8 +68,8 @@ while(True):
 
     if k == 200:
         k = 0
-        cheating = 0
-        not_cheating = 0
+        cheating = 1
+        not_cheating = 1
     else:
         k += 1
 
