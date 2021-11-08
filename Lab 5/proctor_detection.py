@@ -81,7 +81,7 @@ while(True):
         cheating += 1
     ratio = cheating/(not_cheating+cheating)
     percent= 100*ratio
-    print("Probability of Cheating: ",percent,'%')
+    print("Probability of Cheating: ",percent,'%', '  --  ', labels[label])
 
     if webCam:
         if sys.argv[-1] == "noWindow":
