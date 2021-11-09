@@ -305,7 +305,7 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **Include a short video demonstrating the answers to these questions.**
 
-[Our Video](https://drive.google.com/file/d/19o2JBpyXoL9EH9rZh9UjSpbehWMqxk4H/view?usp=sharing)
+[Our Video](https://www.youtube.com/watch?v=wEPZjC5b8Tk)
 
 \*\*\*
 
@@ -326,5 +326,7 @@ Therefore, if there was unusual activity going on during the exam, a high Probab
 
 
 The following link is a video on how our algorithm works with the user:
+
+[Final Video](https://youtu.be/nt2NgB3qOUM)
 
 \*\*\*

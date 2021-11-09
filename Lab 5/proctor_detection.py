@@ -15,7 +15,7 @@ img = None
 webCam = False
 if(len(sys.argv)>1 and not sys.argv[-1]== "noWindow"):
    try:
-      print("I'll try to read your image");
+      print("I'll try to read your image")
       img = cv2.imread(sys.argv[1])
       if img is None:
          print("Failed to load image file:", sys.argv[1])
