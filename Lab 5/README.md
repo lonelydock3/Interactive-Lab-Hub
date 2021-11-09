@@ -313,4 +313,18 @@ During the lecture, we mentioned questions to help characterize a material:
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
-**\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+\*\*\*
+
+**Include a short video demonstrating the finished result.**
+
+Based on our feedback from Part 1, we decided to include a metric called "Probability Score" to determine the likelihood of someone to be cheating.
+
+    Probability Score = # of cheating occurances/(# of cheating occurances + # of not cheating occurances)
+
+Therefore, if there was unusual activity going on during the exam, a high Probability Score most likely occurred.  
+
+
+The following link is a video on how our algorithm works with the user:
+
+\*\*\*

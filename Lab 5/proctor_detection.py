@@ -33,7 +33,7 @@ else:
 
 
 # Load the model
-model = tensorflow.keras.models.load_model('proctor_model.h5')
+model = tensorflow.keras.models.load_model('proctor_model_2.h5')
 # Load Labels:
 labels=[]
 f = open("proctor_labels.txt", "r")
