@@ -1,5 +1,7 @@
 # Little Interactions Everywhere
 
+### NOTE: Brett O'Connor (bwo7) and Gazi Inkiyad (gi45) will be working together on this assignment.
+
 ## Prep
 
 1. Pull the new changes from the class interactive-lab-hub. (You should be familiar with this already!)
