@@ -86,7 +86,35 @@ Once connected, you should be able to see all the messages under the IDD topic. 
   ...
   ```
 
-**\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+\*\*\*
+
+**Consider how you might use this messaging system on interactive devices, and draw/write down 6 ideas here.**
+
+1. Gated house system: When the user enters a message into the Pi and sends the message, if the message is the correct expected message, the gate to the house will open.
+
+![B.1](imgs/b-1.png)
+
+2. Text messaging on multiple devices: Users can send messages between any device that can connect to the MQTT Server.  For example, a user on a computer can message a user on a Pi.
+
+![B.2](imgs/b-2.png)
+
+3. Remote alarm system: User has a Pi next to them and if the fire alarm goes off in another building they manage, they get a message immediately on their Pi.
+
+![B.3](imgs/b-3.png)
+
+4. Storing memos or notes: User can use the Pi to send notes to the MQTT server and view them on their computer later when needed.
+
+![B.4](imgs/b-4.png)
+
+5. User sending tasks to an associate.  Similar to a pager.
+
+![B.5](imgs/b-5.png)
+
+6. Family check-in device: when button clicked on Pi, it sends a message to the MQTT server where a person's parents can see that the user is alright.
+
+![B.6](imgs/b-6.png)
+
+\*\*\*
 
 ### Part C
 ### Streaming a Sensor
