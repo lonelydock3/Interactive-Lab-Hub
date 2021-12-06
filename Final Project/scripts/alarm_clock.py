@@ -1,9 +1,23 @@
 from __future__ import print_function
 import sys
 import time
+import subprocess
+import digitalio
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+import adafruit_rgb_display.st7789 as st7789
+from adafruit_rgb_display.rgb import color565
+from time import strftime, sleep
+from datetime import datetime
+import json
+from speech2text_pt2 import speech2text
+import random
 
 # Gazi's file
 from lab4_setup import *
+
+# Weather speech file
+from weather_call import *
+# speech()
 
 import board
 import busio
@@ -27,6 +41,7 @@ button = I2CDevice(i2c2, DEVICE_ADDRESS)
 i2c = board.I2C()
 apds = APDS9960(i2c)
 apds.enable_color = True
+apds.enable_proximity = True
 myJoystick= qwiic_joystick.QwiicJoystick()
 
 def write_register(dev, register, value, n_bytes=1):
@@ -142,10 +157,14 @@ while(1):
     elif (case == 1):
         # Weather screen
         display_weather() 
-
+        
     elif (case == 2):
         # Threshold screen 
         display_threshold(THRESHOLD, get_sensor_val()) 
+
+    # Support for saying what the weather is 
+    if (case == 1 and apds.proximity > 150):
+        speech()
      
     # Handle threshold changes
     THRESHOLD = change_threshold(joyX, THRESHOLD) 
