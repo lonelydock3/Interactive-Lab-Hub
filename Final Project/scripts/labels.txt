@@ -1,0 +1,4 @@
+0 below 45 degrees
+1 45 - 70 degrees
+2 70 - 90 degrees
+3 above 90 degrees
