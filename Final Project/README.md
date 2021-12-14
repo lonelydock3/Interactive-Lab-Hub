@@ -4,8 +4,6 @@
 
 All code can be found in the [scripts](scripts) folder.
 
-<br>
-
 ## Problem and Goals
 
 Oftentimes we struggle to set an alarm when we go to bed. Our schedules might be hectic or we might be caught up with other activities. Additionally, we may forget to check AM and PM signs for the alarms. Our clocksistant device automatically uses daylight to alert the user. The device could also be set with a certain light threshold to set the alarm. This way users can usually set an alarm that automatically alerts them without too much hassle.
@@ -117,7 +115,7 @@ The following video is one of our friends (Paul) interacting with our device.  I
 
 [Paul using our device](https://drive.google.com/file/d/16YX67Cyal8E72CYIF8ZveoORG3xo1T73/view?usp=sharing)
 
-## Reflections
+## Reflection
 
 We had fun working on this project but it gave us a good understanding of how to tackle different technical problems altogether. Most difficult part of the project was assembling different parts and functionalities together. We had to really put in some time to think about where to place which sensor, buttons, and inner components so we optimize the spacing of the device and functionalities. This process required us to be strategic and conscious of the component measurements. Additionally for our scripts and software we had to make sure everything was running properly as we had in the layout. That process required us to run multiple tests and debug using different settings. Lastly, synthesizing different functions into one script was a bit challenging since it required many other dependencies from different environments. Overall this was a solid project for us to learn speech to text, text to speech, multiple sensors and computer vision. Finally, combining the various things we have learned from the labs into an all in one project was very enriching and allowed us to apply ourselves in a great way. 
 
