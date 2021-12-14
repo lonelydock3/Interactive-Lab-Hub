@@ -1,6 +1,6 @@
 # Final Report
 
-**The Smart Alarm Clock** by Jay Jain (uj26), Gazi Inkyad (gi45), and Brett O'Connor (bwo7)
+**The Smart Alarm Clock** by Jay Jain (uj26), Gazi Inkyad (gi45), and Brett O'Connor (bwo7) - Group 11
 
 All code can be found in the [scripts](scripts) folder.
 
